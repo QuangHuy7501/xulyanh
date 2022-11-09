@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Ứng dụng chèn logo vào ảnh</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>ỨNG DỤNG THÊM LOGO VÀO HÌNH ẢNH</h2>
+
+      <form>
+        <!-- Chọn hình cần thêm logo -->
+        <div>
+          <label for="images"><h4>Hình ảnh (giữ Ctrl để chọn nhiều hình):</h4></label>
+          <input type="file" id="images" multiple />
+        </div>
+
+        <!-- Chọn kiểu logo -->
+        <div>
+          <h4>Chọn kiểu logo:</h4>
+          <input
+            type="radio"
+            id="imageLogo"
+            name="logoType"
+            value="Dạng hình ảnh"
+            checked
+          />
+          <label for="imageLogo">Dạng hình ảnh</label>
+
+          <input type="radio" id="textLogo" name="logoType" value="Dạng chữ" />
+          <label for="textLogo">Dạng chữ</label>
+        </div>
+
+        <!-- Chọn hình logo -->
+        <div id="logo-image-container">
+          <label><h4>Hình logo:</h4></label>
+          <input type="file" id="image-logo-input" />
+        </div>
+
+        <!-- Nhập chữ cần thêm -->
+        <div id="logo-text-container">
+          <label><h4>Nội dung thêm:</h4></label>
+          <input type="text" id="text-logo-input" />
+        </div>
+
+        <!-- Vị trí của logo -->
+        <div>
+          <h4>Chọn vị trí logo:</h4>
+
+          <input
+            type="radio"
+            id="topleft"
+            name="logoPosition"
+            value="topleft"
+            checked
+          />
+          <label for="topleft">Góc trên bên trái</label>
+
+          <input
+            type="radio"
+            id="topright"
+            name="logoPosition"
+            value="topright"
+          />
+          <label for="topright">Góc trên bên phải</label>
+
+          <input
+            type="radio"
+            id="bottomleft"
+            name="logoPosition"
+            value="bottomleft"
+          />
+          <label for="bottomleft">Góc dưới bên trái</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="bottomright"
+            name="logoPosition"
+            value="bottomright"
+          />
+          <label for="bottomright">Góc dưới bên phải</label>
+
+          <input type="radio" id="center" name="logoPosition" value="center" />
+          <label for="center">Giữa hình</label>
+        </div>
+
+        <!-- Độ mờ -->
+        <div id="opacity-container">
+          <label for="opacity"><h4>Độ mờ (0.0 - 1.0)</h4></label>
+          <input id="opacity" type="number" min="0" max="1" step="0.1" value="1.0" />
+        </div>
+
+        <!-- Làm tròn logo -->
+        <div id="rounded-logo-container">
+          <h4>Làm tròn logo</h4>
+          <input type="checkbox" value="Làm tròn logo" id="roundedLogo" />
+          <label for="roundedLogo">Làm tròn logo</label>
+        </div>
+
+        <!-- Font size logo text -->
+        <div id="font-size-container">
+          <h4>Kích cỡ chữ</h4>
+          <input
+            type="radio"
+            id="fs8"
+            name="fontSize"
+            value="8"
+          />
+          <label for="fs8">8px</label>
+
+          <input
+            type="radio"
+            id="fs16"
+            name="fontSize"
+            value="16"
+          />
+          <label for="fs16">16px</label>
+
+          <input
+            type="radio"
+            id="fs32"
+            name="fontSize"
+            value="32"
+          />
+          <label for="fs32">32px</label>
+
+          <input
+            type="radio"
+            id="fs64"
+            name="fontSize"
+            value="64"
+          />
+          <label for="fs64">64px</label>
+
+          <input
+            type="radio"
+            id="fs128"
+            name="fontSize"
+            value="128"
+          />
+          <label for="fs128">128px</label>
+        </div>
+
+        <!-- Text color logo -->
+        <div id="text-color-container">
+          <h4>Màu chữ</h4>
+          <input
+            type="radio"
+            id="black"
+            name="textColor"
+            value="BLACK"
+          />
+          <label for="black">Đen</label>
+
+          <input
+            type="radio"
+            id="white"
+            name="textColor"
+            value="WHITE"
+          />
+          <label for="white">Trắng</label>
+        </div>
+
+        <!-- Kích thước logo : hình -->
+        <div id="logo-image-size-container">
+          <h4>
+            Kích thước logo (phần trăm tỉ lệ với hình gốc 1 - 100)
+          </h4>
+          <label for="logoWidth">Chiều ngang (x)</label>
+          <input type="number" id="logoWidth" value="10" min="1" max="100" step="5" />
+
+          <label for="logoHeight">Chiều dọc (y)</label>
+          <input type="number" id="logoHeight" value="10" min="1" max="100" step="5" />
+        </div>
+
+        <!-- Chọn địa chỉ lưu file -->
+        <div>
+          <label><h4>Chọn địa chỉ lưu file</h4></label>
+          <button id="destination" type="button">Chọn thư mục</button>
+          Thư mục: <strong id="destinationPath"></strong>
+        </div>
+
+        <div>
+          <button id="addLogoBtn">OK</button>
+          <span id="status"></span>
+        </div>
+      </form>
+    </div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>

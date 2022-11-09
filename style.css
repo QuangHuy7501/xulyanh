@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    padding: 50px;
+    background-image: url(./img/logo-DNC.jpg);
+    background-size: 70px;
+    background-repeat: no-repeat; 
+    background-position-y: 45px;
+    background-position-x: 50px;
+}
+
+.container h2 {
+    text-align: center;
+    color: #B22222;
+    /*text-shadow: 10px 5px 10px #B22222;*/
+}
+
+#logo-text-container,
+#font-size-container,
+#text-color-container {
+    display: none;
+}
+
+/********************************INSERT CSS*******************************/
+
+#images {
+    padding: 0px 0px 15px 20px;
+    
+}
+
+#imageLogo{
+    margin: 0px 0px 15px 20px;
+}
+
+#textLogo {
+    margin-left: 50px;
+}
+
+#image-logo-input {
+    padding: 0px 0px 15px 20px;
+}
+
+#logo-text-container {
+    padding: 0px 0px 15px 20px;
+}
+
+#text-logo-input {
+    padding: 10px 50px;
+    border-radius: 5px;
+    border-color: #B22222;
+}
+
+#topleft {
+    margin: 0px 0px 15px 20px;
+}
+
+#topright {
+    margin: 0px 0px 15px 20px;
+}
+
+#bottomleft {
+    margin: 0px 0px 15px 20px;
+}
+
+#bottomright {
+    margin: 0px 0px 15px 20px;
+}
+
+#center {
+    margin: 0px 0px 15px 20px;
+}
+
+#opacity {
+    border-radius: 5px;
+    border-color: #B22222;
+    margin: 0px 0px 15px 20px;
+}
+
+#roundedLogo {
+    margin: 0px 0px 15px 20px;
+}
+
+#fs8 {
+    margin: 0px 0px 15px 20px;
+}
+
+#fs16 {
+    margin: 0px 0px 15px 20px;
+}
+#fs32 {
+    margin: 0px 0px 15px 20px;
+}
+#fs64 {
+    margin: 0px 0px 15px 20px;
+}
+#fs128 {
+    margin: 0px 0px 15px 20px;
+}
+
+#black {
+    margin: 0px 0px 15px 20px;
+}
+
+#white {
+    margin: 0px 0px 15px 20px;
+}
+
+#logo-image-size-container label {
+    margin: 0px 0px 15px 20px;
+}
+
+#logoWidth {
+    margin: 0px 40px 15px 10px;
+    border-radius: 5px;
+    border-color: #B22222;
+}
+
+#logoHeight {
+    margin: 0px 0px 15px 10px;
+    border-radius: 5px;
+    border-color: #B22222;
+}
+
+#destination {
+    margin: 0px 10px 15px 20px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border-color: #B22222;
+    padding: 5px 5px;
+}
+
+#addLogoBtn {
+    margin: 20px 300px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border-color: #B22222;
+    padding: 5px 20px;
+}
